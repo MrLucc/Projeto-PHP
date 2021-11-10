@@ -1,17 +1,10 @@
 <?php
 
-use App\Http\Controllers\ApiController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\CityController;
 use Illuminate\Support\Facades\Route;
 
-
-
-
-
-Route::get('citys', [ApiController::class,'getAllCitys']);
-Route::get('citys/{longradouro}', [ApiController::class, 'getCityByName']);
-Route::post('citys', [ApiController::class, 'postCreateCity']);
-Route::put('citys/{id}', [ApiController::class, 'putUpdateCity']);
-Route::delete('citys/{id}', [ApiController::class,'deleteCity']);
-
-
+Route::get('cityAll', [CityController::class,'getAllCitys']);
+Route::get('city/{logradouro}', [CityController::class, 'getCityByName']);
+Route::post('citySave', [CityController::class, 'postCreateCity']);
+Route::put('cityUpdate/{id}', [CityController::class, 'putUpdateCity']);
+Route::delete('cityDelete/{id}', [CityController::class,'deleteCity']);
